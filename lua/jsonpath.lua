@@ -17,6 +17,20 @@ local function get_json_path(bufnr)
 				key_name = key_name:gsub('"', "")
 				table.insert(path, 1, key_name)
 			end
+		elseif node_type == "array" or node_type == "object" then
+			local parent = node:parent()
+			if parent and parent:type() == "array" then
+				local index = 0
+				for child in parent:iter_children() do
+					if child == node then
+						table.insert(path, 1, string.format("[%d]", index))
+						break
+					end
+					if child:type() == node:type() then
+						index = index + 1
+					end
+				end
+			end
 		end
 		node = node:parent()
 	end
