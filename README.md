@@ -1,5 +1,9 @@
 # jsonpath.nvim
 
+## Screenshot
+
+![./screenshot.png](./screenshot.png)
+
 ## lazy.nvim
 
 ```lua
