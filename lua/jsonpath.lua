@@ -1,8 +1,7 @@
-local ts_utils = require("nvim-treesitter.ts_utils")
 local M = {}
 
 local function get_json_path(bufnr)
-	local node = ts_utils.get_node_at_cursor()
+	local node = vim.treesitter.get_node()
 	if not node then
 		return "No Treesitter node found"
 	end

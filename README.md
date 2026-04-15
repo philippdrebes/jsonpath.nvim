@@ -15,8 +15,7 @@ While not perfect, it serves it's purpose.
 
 ## Requirements
 
-- Neovim
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Neovim >= 0.12
 
 ## Installation
 
@@ -25,7 +24,6 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 return {
   "philippdrebes/jsonpath.nvim",
-  dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     local jsonpath = require("jsonpath")
       jsonpath.setup()
